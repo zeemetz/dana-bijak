@@ -1,5 +1,7 @@
 package com.poc.danabijak.minilending.service;
 
+import com.poc.danabijak.minilending.config.LoanConfig;
+import com.poc.danabijak.minilending.exception.NoCustomerFoundException;
 import com.poc.danabijak.minilending.repository.CustomerRepository;
 import com.poc.danabijak.minilending.repository.LoanRepository;
 import com.poc.danabijak.minilending.repository.entity.Customer;
@@ -20,10 +22,16 @@ public class LoanApplicationService {
     private CustomerRepository customerRepository;
 
     @Autowired
+    private LoanConfig loanConfig;
+
+    @Autowired
     private LoanRepository loanRepository;
 
-    public List<Loan> getLoan(String citizenID){
+    public List<Loan> getLoan(String citizenID) throws Exception{
         Customer customer = customerRepository.findByCitizenID(citizenID);
+        if(customer == null){
+            throw new NoCustomerFoundException("customer not found");
+        }
         return loanRepository.findAllByCustomerID(customer.getCustomerID());
     }
 
@@ -34,7 +42,7 @@ public class LoanApplicationService {
                                             String applicationID,
                                             String citizenID,
                                             String loanAmount,
-                                            String term){
+                                            String term) throws Exception{
         ApproveLoanResponse response = new ApproveLoanResponse();
 
         Customer customerResult = customerRepository.findByCitizenID(citizenID);
@@ -51,7 +59,7 @@ public class LoanApplicationService {
         Loan loan = new Loan();
         loan.setCustomerID(customerResult.getCustomerID());
         loan.setApplicationID(applicationID);
-        loan.setApplicationFee(new BigDecimal(0));
+        loan.setApplicationFee(new BigDecimal(loanConfig.getApplicationFee()));
         loan.setInterest(12.5);
         loan.setLoanAmount(new BigDecimal(loanAmount));
 
@@ -65,7 +73,7 @@ public class LoanApplicationService {
             TermOfPayment termOfPayment = new TermOfPayment();
             termOfPayment.setId(Long.valueOf(i));
             termOfPayment.setAdminFee(installment
-                .multiply(new BigDecimal(1))
+                .multiply(new BigDecimal(loanConfig.getAdminFeePercentage()))
                 .divide(new BigDecimal(100)));
             termOfPayment.setAmount(installment);
             termOfPayment.setPaymentStatus("not paid");

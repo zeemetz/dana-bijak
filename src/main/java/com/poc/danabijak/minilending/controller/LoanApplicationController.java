@@ -15,6 +15,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RequestMapping(value = "/v1")
@@ -29,7 +30,7 @@ public class LoanApplicationController {
 
     @PostMapping(value = "/loan/apply")
     @ResponseBody
-    public ResponseEntity applyLoan (@RequestBody ApplyLoanRequest request){
+    public ResponseEntity applyLoan (@Valid @RequestBody ApplyLoanRequest request){
         ApplyLoanResponse response = new ApplyLoanResponse();
         try{
             ApproveLoanResponse approveLoanResponse = loanApplicationService.applyingLoan(
@@ -55,7 +56,7 @@ public class LoanApplicationController {
 
     @GetMapping(value = "/loan/list")
     @ResponseBody
-    public ResponseEntity listLoan (@RequestBody ListLoanRequest request) {
+    public ResponseEntity listLoan (@Valid @RequestBody ListLoanRequest request) {
         ListLoanResponse response = new ListLoanResponse();
         try{
             List<Loan> loanResult = loanApplicationService.getLoan(request.getCitizenID());
