@@ -3,6 +3,7 @@ package com.poc.danabijak.minilending.repository;
 import com.poc.danabijak.minilending.repository.entity.Customer;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -18,6 +19,7 @@ import static org.mockito.Mockito.when;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Ignore
 public class CustomerRepositoryTest {
 
     private String citizenID = "01234567890";

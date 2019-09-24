@@ -1,5 +1,6 @@
 package com.poc.danabijak.minilending.service;
 
+import com.poc.danabijak.minilending.config.LoanConfig;
 import com.poc.danabijak.minilending.exception.NoCustomerFoundException;
 import com.poc.danabijak.minilending.repository.CustomerRepository;
 import com.poc.danabijak.minilending.repository.LoanRepository;
@@ -33,9 +34,13 @@ public class LoanApplicationServiceTest {
     @Mock
     LoanRepository loanRepository;
 
+    @Mock
+    LoanConfig loanConfig;
+
     @Before
     public void setup(){
-
+        when(loanConfig.getAdminFeePercentage()).thenReturn("1");
+        when(loanConfig.getApplicationFee()).thenReturn("0");
     }
 
     @Test

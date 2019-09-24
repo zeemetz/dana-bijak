@@ -3,6 +3,7 @@ package com.poc.danabijak.minilending.repository;
 import com.poc.danabijak.minilending.repository.entity.Loan;
 import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,6 +14,7 @@ import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
+@Ignore
 public class LoanRepositoryTest {
     @Autowired
     LoanRepository loanRepository;
