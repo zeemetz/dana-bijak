@@ -40,7 +40,7 @@ docker-compose build
 How to run
 
 ```
-docker-compose up
+docker-compose up -d
 ```
 
 Test the api using postman bellow:
@@ -52,7 +52,7 @@ https://www.getpostman.com/collections/ca340c48afab32a132ee
 
 unit test done in mock, there are 2 integration test to check repository to work (ignored when build) with style as follow:
 
-```
+```java
 @RunWith(MockitoJUnitRunner.class)
 public class LoanApplicationServiceTest {
 
@@ -79,7 +79,7 @@ public class LoanApplicationServiceTest {
 
 Unit test are created as to check its sole function to keep the loose coupling
 
-```
+```java
     @Test
     public void applyingLoan_existingCustomer_shouldBeSuccess() throws Exception{
         String customerName = "yoedi hariadi kurniawan";
