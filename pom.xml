@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>com.poc.danabijak</groupId>
 	<artifactId>mini-lending</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.1.1</version>
 	<name>mini-lending</name>
 	<description>Demo project for Spring Boot</description>
 
