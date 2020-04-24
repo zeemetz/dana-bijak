@@ -1,38 +1,48 @@
 apiVersion: networking.istio.io/v1alpha3
-kind: Gateway
+kind: DestinationRule
 metadata:
-  name: istio-gateway
+  name: demo-mini-lending
 spec:
-  selector:
-    istio: ingressgateway # use istio default controller
-  servers:
-    - port:
-        number: 80
-        name: http
-        protocol: HTTP
-      hosts:
-        - "*"
+  host: demo-mini-lending
+  trafficPolicy:
+    connectionPool:
+      tcp:
+        maxConnections: 1
+  subsets:
+    - name: v1
+      labels:
+        version: v1
+    - name: v2
+      labels:
+        version: v2
 ---
 apiVersion: networking.istio.io/v1alpha3
 kind: VirtualService
 metadata:
-  name: greetings
+  name: demo-mini-lending
 spec:
   hosts:
+#    - mini.lending
     - "*"
   gateways:
-  - istio-gateway
+  - istio-system/ingressgateway
   http:
     - route:
         - destination:
-            host: demo-v1
+            host: demo-mini-lending
+            port:
+              number: 8080
+            subset: v1
       match:
         - headers:
             x-api-version:
               exact: v1.0.0
     - route:
         - destination:
-            host: demo-v2
+            host: demo-mini-lending
+            port:
+              number: 8080
+            subset: v2
       match:
         - headers:
             x-api-version:

@@ -1,12 +1,13 @@
-package com.poc.minilending.controller;
+package com.poc.danabijak.minilending.controller;
 
-import com.poc.minilending.controller.request.ApplyLoanRequest;
-import com.poc.minilending.controller.request.ListLoanRequest;
-import com.poc.minilending.factory.ResponseFactory;
-import com.poc.minilending.repository.entity.Customer;
-import com.poc.minilending.repository.entity.Loan;
-import com.poc.minilending.service.LoanApplicationService;
-import com.poc.minilending.service.response.ApproveLoanResponse;
+import com.poc.danabijak.minilending.controller.request.ApplyLoanRequest;
+import com.poc.danabijak.minilending.controller.request.ListLoanRequest;
+import com.poc.danabijak.minilending.controller.response.ApplyLoanResponse;
+import com.poc.danabijak.minilending.factory.ResponseFactory;
+import com.poc.danabijak.minilending.repository.entity.Customer;
+import com.poc.danabijak.minilending.repository.entity.Loan;
+import com.poc.danabijak.minilending.service.LoanApplicationService;
+import com.poc.danabijak.minilending.service.response.ApproveLoanResponse;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

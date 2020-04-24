@@ -1,6 +1,6 @@
-package com.poc.minilending.repository;
+package com.poc.danabijak.minilending.repository;
 
-import com.poc.minilending.repository.entity.Loan;
+import com.poc.danabijak.minilending.repository.entity.Loan;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Ignore;

@@ -1,4 +1,4 @@
-package com.poc.minilending.controller.request;
+package com.poc.danabijak.minilending.controller.request;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.Length;

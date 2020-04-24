@@ -1,4 +1,4 @@
-package com.poc.minilending.exception;
+package com.poc.danabijak.minilending.exception;
 
 public class NoCustomerFoundException extends Exception {
     public NoCustomerFoundException(String message) {

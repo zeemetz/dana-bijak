@@ -1,7 +1,7 @@
-package com.poc.minilending.factory;
+package com.poc.danabijak.minilending.factory;
 
-import com.poc.minilending.constant.ResponseConstant;
-import com.poc.minilending.controller.response.GeneralResponse;
+import com.poc.danabijak.minilending.constant.ResponseConstant;
+import com.poc.danabijak.minilending.controller.response.GeneralResponse;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;

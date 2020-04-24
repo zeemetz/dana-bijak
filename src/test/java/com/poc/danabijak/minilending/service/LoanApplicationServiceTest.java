@@ -1,12 +1,12 @@
-package com.poc.minilending.service;
+package com.poc.danabijak.minilending.service;
 
-import com.poc.minilending.config.LoanConfig;
-import com.poc.minilending.exception.NoCustomerFoundException;
-import com.poc.minilending.repository.CustomerRepository;
-import com.poc.minilending.repository.LoanRepository;
-import com.poc.minilending.repository.entity.Customer;
-import com.poc.minilending.repository.entity.Loan;
-import com.poc.minilending.service.response.ApproveLoanResponse;
+import com.poc.danabijak.minilending.config.LoanConfig;
+import com.poc.danabijak.minilending.exception.NoCustomerFoundException;
+import com.poc.danabijak.minilending.repository.CustomerRepository;
+import com.poc.danabijak.minilending.repository.LoanRepository;
+import com.poc.danabijak.minilending.repository.entity.Customer;
+import com.poc.danabijak.minilending.repository.entity.Loan;
+import com.poc.danabijak.minilending.service.response.ApproveLoanResponse;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;

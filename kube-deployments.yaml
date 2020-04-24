@@ -24,10 +24,12 @@ spec:
         version: v1
     spec:
       containers:
-        - image: localhost:5000/mini-lending:v1
+        - image: localhost:5000/mini-lending:v1 #changes the image as you prefer
           name: mini-lending
           imagePullPolicy: IfNotPresent
           resources: {}
+          ports:
+            - containerPort: 8080
           env:
             - name: VERSION
               value: v1
@@ -60,11 +62,18 @@ spec:
         version: v2
     spec:
       containers:
-        - image: localhost:5000/mini-lending:v2
+        - image: localhost:5000/mini-lending:v2 #changes the image as you prefer
           name: mini-lending
           imagePullPolicy: IfNotPresent
           resources: {}
+          ports:
+          - containerPort: 8080
           env:
             - name: VERSION
               value: v2
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
 status: {}

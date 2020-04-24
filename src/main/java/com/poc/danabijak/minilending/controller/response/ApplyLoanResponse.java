@@ -1,4 +1,4 @@
-package com.poc.minilending.controller.response;
+package com.poc.danabijak.minilending.controller.response;
 
 import lombok.Data;
 

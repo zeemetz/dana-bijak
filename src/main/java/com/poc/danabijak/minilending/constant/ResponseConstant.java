@@ -1,4 +1,4 @@
-package com.poc.minilending.constant;
+package com.poc.danabijak.minilending.constant;
 
 public class ResponseConstant {
     private ResponseConstant() {
