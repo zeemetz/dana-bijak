@@ -1,25 +1,11 @@
-package com.poc.danabijak.minilending.controller.response;
+package com.poc.minilending.controller.response;
+
+import lombok.Data;
 
 import java.io.Serializable;
 
+@Data
 public class GeneralResponse<T> implements Serializable {
     private String code;
-
     private T data;
-
-    public T getData() {
-        return data;
-    }
-
-    public void setData(T data) {
-        this.data = data;
-    }
-
-    public String getCode() {
-        return code;
-    }
-
-    public void setCode(String code) {
-        this.code = code;
-    }
 }

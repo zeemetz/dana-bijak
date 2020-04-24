@@ -1,8 +1,6 @@
-package com.poc.danabijak.minilending.repository;
+package com.poc.minilending.repository;
 
-import com.poc.danabijak.minilending.repository.entity.Customer;
-import com.poc.danabijak.minilending.repository.entity.Loan;
-import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+import com.poc.minilending.repository.entity.Loan;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;

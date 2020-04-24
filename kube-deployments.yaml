@@ -1,0 +1,70 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo
+  name: demo-v1
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+      version: v1
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo
+        version: v1
+    spec:
+      containers:
+        - image: localhost:5000/mini-lending:v1
+          name: mini-lending
+          imagePullPolicy: IfNotPresent
+          resources: {}
+          env:
+            - name: VERSION
+              value: v1
+          readinessProbe:
+            tcpSocket:
+              port: 8080
+            initialDelaySeconds: 5
+            periodSeconds: 10
+status: {}
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: demo
+  name: demo-v2
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: demo
+      version: v2
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: demo
+        version: v2
+    spec:
+      containers:
+        - image: localhost:5000/mini-lending:v2
+          name: mini-lending
+          imagePullPolicy: IfNotPresent
+          resources: {}
+          env:
+            - name: VERSION
+              value: v2
+status: {}

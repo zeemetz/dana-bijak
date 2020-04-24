@@ -1,4 +1,4 @@
-package com.poc.danabijak.minilending.repository.entity;
+package com.poc.minilending.repository.entity;
 
 import lombok.Data;
 import org.hibernate.validator.constraints.UniqueElements;

@@ -1,6 +1,6 @@
-package com.poc.danabijak.minilending.exception;
+package com.poc.minilending.exception;
 
-import com.poc.danabijak.minilending.factory.ResponseFactory;
+import com.poc.minilending.factory.ResponseFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;

@@ -1,7 +1,7 @@
-package com.poc.danabijak.minilending.service.response;
+package com.poc.minilending.service.response;
 
-import com.poc.danabijak.minilending.repository.entity.Customer;
-import com.poc.danabijak.minilending.repository.entity.Loan;
+import com.poc.minilending.repository.entity.Customer;
+import com.poc.minilending.repository.entity.Loan;
 import lombok.Data;
 
 @Data

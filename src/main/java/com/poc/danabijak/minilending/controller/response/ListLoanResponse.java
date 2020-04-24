@@ -1,6 +1,6 @@
-package com.poc.danabijak.minilending.controller.response;
+package com.poc.minilending.controller.response;
 
-import com.poc.danabijak.minilending.repository.entity.Loan;
+import com.poc.minilending.repository.entity.Loan;
 import lombok.Data;
 
 import java.util.List;

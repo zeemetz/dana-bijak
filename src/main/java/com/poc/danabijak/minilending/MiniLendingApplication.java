@@ -1,4 +1,4 @@
-package com.poc.danabijak.minilending;
+package com.poc.minilending;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

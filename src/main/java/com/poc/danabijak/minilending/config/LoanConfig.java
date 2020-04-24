@@ -1,4 +1,4 @@
-package com.poc.danabijak.minilending.config;
+package com.poc.minilending.config;
 
 import lombok.Data;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package com.poc.danabijak.minilending;
+package com.poc.minilending;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
